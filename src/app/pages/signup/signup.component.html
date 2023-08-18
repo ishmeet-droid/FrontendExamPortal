@@ -7,7 +7,7 @@
             <h1 class="text-center">Register Here!!</h1>
 
             <!-- Converts object to json format-->
-            <!-- {{user | json}} -->
+            {{user | json}}
             <form (ngSubmit)="formSubmit()">
                 <!-- UserName -->
                 <mat-form-field class="full-width" appearance="fill">
@@ -22,13 +22,13 @@
                 <!-- First Name -->
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>First Name</mat-label>
-                    <input [(ngModel)]="user.fName" name="fname" matInput placeholder="Enter here" />
+                    <input [(ngModel)]="user.fname" name="fName" matInput placeholder="Enter here" />
                 </mat-form-field>
 
                 <!--Last Name  -->
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Last Name</mat-label>
-                    <input [(ngModel)]="user.lName" name="lName" matInput placeholder="Enter here" />
+                    <input [(ngModel)]="user.lname" name="lName" matInput placeholder="Enter here" />
                 </mat-form-field>
 
                 <!-- Email  -->
