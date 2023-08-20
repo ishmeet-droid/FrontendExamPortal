@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" style="margin-top: 5%;">
+                <div class="container text-center">
+                    <img src="../../../assets/login.png" alt="Register" width="100" height="100" />
+                </div>
+                <!-- <h1 class="text-center">Login Here!!</h1> -->
+                <mat-card style="background-color: rgb(154, 191, 198);">
+                    <mat-card-content>
+                        <form action="" class="text-center">
+                            <!-- UserName -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>UserName</mat-label>
+                                <input
+                                 required
+                                 name="username"
+                                 matInput 
+                                 placeholder="Enter here" />
+                            </mat-form-field>
+                            <!-- Password -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input 
+                                 required 
+                                 matInput
+                                 name="password"
+                                 type="password"
+                                 placeholder="Enter here" />
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <span>
+                                <button mat-raised-button color="primary">Login</button>
+                                <button mat-raised-button style="margin-left: 20px;" color="accent">Clear</button>
+                                </span>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                  </mat-card>
+                
+            </div>
+        </div>
+    </div>
+</div>

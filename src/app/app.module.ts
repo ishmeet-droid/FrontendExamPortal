@@ -15,7 +15,9 @@ import {FormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './pages/home/home.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     FooterComponent,
     SignupComponent,
     LoginComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -38,6 +41,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatIconModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatCardModule
     
 
   ],

@@ -1,22 +1,26 @@
-<div style="margin-top: 2.5%">
-    <mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <span>My App</span>
-          <span class="example-spacer"></span>
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </mat-toolbar-row>
-    
-        <mat-toolbar-row>
-          <span>Second Line</span>
-          <span class="example-spacer"></span>
-          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-          </button>
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-          </button>
-        </mat-toolbar-row>
-      </mat-toolbar>
-</div>
+<mat-toolbar color="primary">
+  <a
+
+   routerLink="/" 
+   mat-icon-button 
+   class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </a>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <a 
+    [routerLink]="'/login'"
+    mat-button 
+    class="login">
+    <mat-icon>login</mat-icon>
+    Login
+  </a>
+  <!-- <span class="example-spacer"></span> -->
+  <a 
+    routerLink="/signup"
+    mat-button 
+    class="register"  >
+    <mat-icon>how_to_reg</mat-icon>
+    Register
+  </a>
+</mat-toolbar>
