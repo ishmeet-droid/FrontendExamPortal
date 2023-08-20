@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { of } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupComponent{
 
-  constructor(private userService : UserService){}
+  constructor(private userService : UserService, private snack:MatSnackBar){}
 
   public user = {
     username:'',
@@ -22,10 +24,18 @@ export class SignupComponent{
 
   formSubmit(){
     console.log(this.user);
-    if(this.user.username == '' || this.user.username == null){
-      alert('User is required !!!!')
+    if((this.user.username == '' || this.user.username == null) 
+    || (this.user.email == '' || this.user.email == null)
+    || (this.user.fname == '' || this.user.fname == null)
+    || (this.user.password == '' || this.user.password == null)
+    || (this.user.phone == '' || this.user.phone == null)
+    ){
+   
+      Swal.fire('failure', '* Marked feilds are required !!!','warning');
       return;
     }
+    //TODO: Validation on each field...
+  
     
     //addUser : userService to backEnd..
   //   of(this.userService.addUser(this.user)).subscribe(
@@ -41,11 +51,19 @@ export class SignupComponent{
 
   this.userService.addUser(this.user).subscribe(
 
-   { next:(data) => {
+   { next:(data : any) => {
       console.log(data);
-      alert('success');
+      // alert('success');
+      // using Sweet Alert...
+      Swal.fire('Sucess', 'User Is Registered with userId:' + data.id ,'success')
     },
-    error:(e) => console.error(e)
+    error:(e) =>{
+       console.error(e);
+      // this.snack.open('Something went wrong!!', '' ,{
+      //   duration: 2000,
+      // })
+      Swal.fire('Failure', 'Something went wrong!!','error')
+    }
   }
   )
   }
